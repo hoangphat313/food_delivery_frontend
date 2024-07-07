@@ -30,6 +30,17 @@ const Cart = () => {
     phoneNumber: "",
     completeAddress: "",
   });
+  const [isFormFilled, setIsFormFilled] = useState(false); // State để kiểm tra xem form đã điền đầy đủ hay chưa
+
+  // Function to check if all delivery details are filled
+  const checkFormFilled = () => {
+    const { firstName, lastName, emailAddress, phoneNumber, completeAddress } = deliveryDetails;
+    return firstName && lastName && emailAddress && phoneNumber && completeAddress;
+  };
+
+  useEffect(() => {
+    setIsFormFilled(checkFormFilled()); // Cập nhật trạng thái isFormFilled khi có thay đổi trong deliveryDetails
+  }, [deliveryDetails]);
 
   // Function to fetch user data
   const fetchUserData = async () => {
@@ -48,8 +59,8 @@ const Cart = () => {
           lastName = splitName.slice(1).join(" ");
         }
         setDeliveryDetails({
-          firstName: firstName,
-          lastName: lastName,
+          firstName: firstName || "",
+          lastName: lastName || "",
           emailAddress: userData.email || "",
           phoneNumber: deliveryDetails.phoneNumber || "",
           completeAddress: deliveryDetails.completeAddress || "",
@@ -85,24 +96,18 @@ const Cart = () => {
   };
 
   const PlaceOrder = async () => {
+    if (!isFormFilled) {
+      dispatch(
+        openSnackbar({
+          message: "Please fill in all required delivery details.",
+          severity: "error",
+        })
+      );
+      return;
+    }
+
     setButtonLoad(true);
     try {
-      const isDeliveryDetailsFilled =
-        deliveryDetails.firstName &&
-        deliveryDetails.lastName &&
-        deliveryDetails.completeAddress &&
-        deliveryDetails.phoneNumber &&
-        deliveryDetails.emailAddress;
-
-      if (!isDeliveryDetailsFilled) {
-        dispatch(
-          openSnackbar({
-            message: "Please fill in all required delivery details.",
-            severity: "error",
-          })
-        );
-        return;
-      }
       const token = localStorage.getItem("food-app-token");
       const totalAmount = calculateSubtotal().toFixed(2);
       const orderDetails = {
@@ -131,7 +136,7 @@ const Cart = () => {
       setButtonLoad(false);
     }
   };
-  //
+
   const addCart = async (id) => {
     const token = localStorage.getItem("food-app-token");
     try {
@@ -328,12 +333,13 @@ const Cart = () => {
                     </div>
                   </Delivery>
                   <Button
-                    text="Place Order"
-                    small
+                    text={"Place Order"}
+                    disabled={!isFormFilled}
+                    loading={buttonLoad}
                     onClick={PlaceOrder}
-                    isLoading={buttonLoad}
-                    disabled={buttonLoad}
-                  />
+                  >
+
+                  </Button>
                 </Right>
               </Wrapper>
             )}

@@ -21,6 +21,11 @@ const TextInput = ({
   password,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const handleInputChange = (e) => {
+    if (handleChange) {
+      handleChange(e);
+    }
+  };
   return (
     <Container small={small}>
       <Label small={small} popup={popup} error={error}>
@@ -48,7 +53,7 @@ const TextInput = ({
               placeholder={placeholder}
               name={name}
               value={value}
-              onChange={(e) => handleChange(e)}
+              onChange={handleInputChange}
             />
           </ChipWrapper>
         ) : (
@@ -62,7 +67,7 @@ const TextInput = ({
               columns={columns}
               placeholder={placeholder}
               value={value}
-              onChange={(e) => handleChange(e)}
+              onChange={handleInputChange}
               type={password && !showPassword ? "password" : "text"}
             />
             {password && (
