@@ -256,7 +256,7 @@ const Cart = () => {
                           small
                           placeholder="First Name"
                           value={deliveryDetails.firstName}
-                          onChange={(e) =>
+                          handleChange={(e) =>
                             setDeliveryDetails({
                               ...deliveryDetails,
                               firstName: e.target.value,
@@ -270,7 +270,7 @@ const Cart = () => {
                           small
                           placeholder="Last Name"
                           value={deliveryDetails.lastName}
-                          onChange={(e) =>
+                          handleChange={(e) =>
                             setDeliveryDetails({
                               ...deliveryDetails,
                               lastName: e.target.value,
@@ -285,7 +285,7 @@ const Cart = () => {
                         small
                         placeholder="Email Address"
                         value={deliveryDetails.emailAddress}
-                        onChange={(e) =>
+                        handleChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
                             emailAddress: e.target.value,
@@ -299,7 +299,7 @@ const Cart = () => {
                         small
                         placeholder="Phone no. +84 XXXXX XXXXX"
                         value={deliveryDetails.phoneNumber}
-                        onChange={(e) =>
+                        handleChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
                             phoneNumber: e.target.value,
@@ -315,7 +315,7 @@ const Cart = () => {
                         rows="5"
                         placeholder="Complete Address (Address, State, Country, Pincode)"
                         value={deliveryDetails.completeAddress}
-                        onChange={(e) =>
+                        handleChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
                             completeAddress: e.target.value,
