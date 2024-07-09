@@ -263,8 +263,8 @@ const ProductsCard = ({ product }) => {
         <Title>{product?.name}</Title>
         <Desc>{product?.desc}</Desc>
         <Price>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-            <Span>{formatVND(product?.price?.org)}</Span>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
+            {formatVND(product?.price?.org)}
             <Span>{formatVND(product?.price?.mrp)}</Span>
           </div>
 
