@@ -64,8 +64,9 @@ const Navbar = ({ setOpenAuth }) => {
             {currentUser ? (
               <Navlink to="/profile" onClick={() => setIsOpen(false)}>Profile</Navlink>
             ) : (
-              <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
-            )}
+              currentUser && (
+                <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
+              ))}
             {currentUser ? (
               <>
                 <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
