@@ -114,8 +114,8 @@ export const MobileMenu = styled.ul`
   list-style: none;
   width: 80%;
   padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light}; /* Adjust background color here */
-  background-color: #EB0029; /* Set the background color to red */
+  background: ${({ theme }) => theme.card_light};
+  background-color: #BBBBBB; 
   position: absolute;
   top: 80px;
   right: 0;
