@@ -65,6 +65,10 @@ const SearchPage = () => {
 
     const handleSearch = async () => {
         const token = localStorage.getItem("food-app-token");
+        if (!token) {
+            toast.error("You must be logged in to search for products.");
+            return;
+        }
         if (!query) {
             toast.error("Please enter a product name to search.");
             return;
