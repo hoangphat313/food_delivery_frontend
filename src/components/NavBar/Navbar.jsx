@@ -71,7 +71,9 @@ const Navbar = ({ setOpenAuth }) => {
                 <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
               </div>
             )}
-            {currentUser && (
+            {currentUser ? (
+              <Navlink to="/profile" onClick={() => setIsOpen(false)}>Contact</Navlink>
+            ) : (
               <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
             )}
           </MobileMenu>
