@@ -141,7 +141,7 @@ export const TextButton = styled.span`
 `;
 
 export const RestaurantName = styled.h1`
-  font-size: 24px; /* Adjust font size */
+  font-size: 18px;
   font-weight: 700;
   color: #EB0029;
 `;
