@@ -131,7 +131,7 @@ const Price = styled.div`
 const Percent = styled.div`
   font-size: 12px;
   font-weight: 500;
-  color: green;
+  color: #EB0029;
 `;
 const Span = styled.div`
   font-size: 14px;
@@ -267,7 +267,6 @@ const ProductsCard = ({ product }) => {
             {formatVND(product?.price?.org)}
             <Span>{formatVND(product?.price?.mrp)}</Span>
           </div>
-
           <Percent> ({discount.toFixed(2)}% Off) </Percent>
         </Price>
       </Details>
