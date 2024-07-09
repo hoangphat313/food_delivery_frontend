@@ -48,7 +48,7 @@ const Navbar = ({ setOpenAuth }) => {
             <ShoppingCartOutlined sx={{ color: "inherit", fontSize: "28px" }} />
           </Navlink>
           {currentUser && (
-            <Avatar onClick={handleAvatarClick} src={currentUser?.img}>{currentUser?.name[0]}</Avatar>
+            <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
           )}
         </MobileIcons>
         <NavItems>
