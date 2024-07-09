@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { formatVND } from "../../utils/format";
 const OrderCardContainer = styled.div`
   width: 100%;
   max-width: 600px;
@@ -89,11 +89,11 @@ const OrderCard = ({ order }) => {
   return (
     <OrderCardContainer>
       <OrderInfo>
-        <OrderTitle>Order ID: {order._id}</OrderTitle>
+        <OrderTitle>Order ID: {order._id.toFixed(5)}</OrderTitle>
         <OrderStatus>{order.status}</OrderStatus>
       </OrderInfo>
       <OrderAddress>Address: {order.address}</OrderAddress>
-      <OrderTotal>Total Amount: ${order.total_amount.toFixed(2)}</OrderTotal>
+      <OrderTotal>Total Amount: {formatVND(order.total_amount)}</OrderTotal>
       <h4>Products:</h4>
       <ProductsList>
         {order.products.map((item) => (
