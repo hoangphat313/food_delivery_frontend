@@ -7,7 +7,6 @@ import {
   FavoriteRounded,
   ShoppingBagOutlined,
   ShoppingCart,
-  Spa,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -121,7 +120,6 @@ const Desc = styled.div`
 `;
 const Price = styled.div`
   display: flex;
-  flex-direction:column;
   align-items: center;
   gap: 8px;
   font-size: 18px;
@@ -263,10 +261,7 @@ const ProductsCard = ({ product }) => {
         <Title>{product?.name}</Title>
         <Desc>{product?.desc}</Desc>
         <Price>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
-            {formatVND(product?.price?.org)}
-            <Span>{formatVND(product?.price?.mrp)}</Span>
-          </div>
+          {formatVND(product?.price?.org)} <Span>{formatVND(product?.price?.mrp)}</Span>
           <Percent> ({discount.toFixed(2)}% Off) </Percent>
         </Price>
       </Details>
