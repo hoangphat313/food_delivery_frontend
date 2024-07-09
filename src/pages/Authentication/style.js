@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
   flex: 1;
   height: 100%;
@@ -41,6 +42,10 @@ export const Right = styled.div`
   gap: 16px;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const CloseButton = styled.div`
