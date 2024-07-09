@@ -28,6 +28,7 @@ const Card = styled.div`
   gap: 16px;
   transition: all 0.3s ease-out;
   cursor: pointer;
+  position: relative; 
   @media (max-width: 600px) {
     width: 180px;
   }
@@ -41,13 +42,17 @@ const Image = styled.img`
   @media (max-width: 600px) {
     height: 180px;
   }
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 const Menu = styled.div`
   position: absolute;
   z-index: 10;
   color: ${({ theme }) => theme.text_primary};
-  top: 14px;
-  right: 14px;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
   display: none;
   flex-direction: column;
   gap: 12px;
@@ -62,13 +67,9 @@ const Top = styled.div`
   transition: all 0.3s ease-out;
   &:hover {
     background-color: ${({ theme }) => theme.shadow};
-  }
-
-  &:hover ${Image} {
-    opacity: 0.9;
-  }
-  &:hover ${Menu} {
-    display: flex;
+    ${Menu} {
+      display: flex;
+    }
   }
 `;
 
@@ -141,11 +142,6 @@ const Price = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
-`;
-const Percent = styled.div`
-  font-size: 12px;
-  font-weight: 500;
-  color: #EB0029;
 `;
 const Span = styled.div`
   font-size: 14px;
