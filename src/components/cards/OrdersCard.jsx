@@ -89,7 +89,7 @@ const OrderCard = ({ order }) => {
   return (
     <OrderCardContainer>
       <OrderInfo>
-        <OrderTitle>Order ID: {order._id.toFixed(5)}</OrderTitle>
+        <OrderTitle>Order ID: {order._id}</OrderTitle>
         <OrderStatus>{order.status}</OrderStatus>
       </OrderInfo>
       <OrderAddress>Address: {order.address}</OrderAddress>
