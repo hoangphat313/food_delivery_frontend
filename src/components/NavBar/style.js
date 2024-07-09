@@ -114,7 +114,8 @@ export const MobileMenu = styled.ul`
   list-style: none;
   width: 80%;
   padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + 99};
+  background: ${({ theme }) => theme.card_light}; /* Adjust background color here */
+  background-color: #EB0029; /* Set the background color to red */
   position: absolute;
   top: 80px;
   right: 0;
@@ -125,6 +126,7 @@ export const MobileMenu = styled.ul`
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
 `;
+
 
 export const TextButton = styled.span`
   text-align: end;
