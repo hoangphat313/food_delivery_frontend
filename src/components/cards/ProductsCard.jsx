@@ -6,7 +6,6 @@ import {
   FavoriteBorder,
   FavoriteRounded,
   ShoppingBagOutlined,
-  ShoppingCart,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -72,6 +71,23 @@ const Top = styled.div`
     display: flex;
   }
 `;
+
+const DiscountLabel = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    padding: 3px 7px;
+  }
+`;
+
 const MenuItem = styled.div`
   border-radius: 50%;
   width: 18px;
@@ -231,6 +247,7 @@ const ProductsCard = ({ product }) => {
       <ToastContainer />
       <Top>
         <Image src={product?.img} onClick={() => navigate(`/dishes/${product._id}`)} />
+        <DiscountLabel>{discount.toFixed(2)}% Off</DiscountLabel>
         <Menu>
           <MenuItem
             onClick={() => (favorite ? removeFavourite() : addFavourite())}
@@ -262,7 +279,6 @@ const ProductsCard = ({ product }) => {
         <Desc>{product?.desc}</Desc>
         <Price>
           {formatVND(product?.price?.org)} <Span>{formatVND(product?.price?.mrp)}</Span>
-          <Percent> ({discount.toFixed(2)}% Off) </Percent>
         </Price>
       </Details>
     </Card>
