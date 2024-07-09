@@ -7,6 +7,7 @@ import {
   FavoriteRounded,
   ShoppingBagOutlined,
   ShoppingCart,
+  Spa,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -262,9 +263,11 @@ const ProductsCard = ({ product }) => {
         <Title>{product?.name}</Title>
         <Desc>{product?.desc}</Desc>
         <Price>
-          <>{formatVND(product?.price?.org)} <Span>{formatVND(product?.price?.mrp)}</Span>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+            <Span>{formatVND(product?.price?.org)}</Span>
+            <Span>{formatVND(product?.price?.mrp)}</Span>
+          </div>
 
-          </>
           <Percent> ({discount.toFixed(2)}% Off) </Percent>
         </Price>
       </Details>
