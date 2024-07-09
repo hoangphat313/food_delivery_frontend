@@ -80,8 +80,8 @@ const DiscountLabel = styled.div`
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 11px;
+  font-weight: 500;
   @media (max-width: 600px) {
     font-size: 12px;
     padding: 3px 7px;
