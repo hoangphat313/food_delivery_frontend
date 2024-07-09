@@ -21,10 +21,12 @@ const Navbar = ({ setOpenAuth }) => {
 
   const handleAvatarClick = () => {
     navigate("/profile");
+    setIsOpen(false);
   };
 
   const handleSearchClick = () => {
     navigate("/search");
+    setIsOpen(false);
   };
 
   return (
@@ -46,7 +48,7 @@ const Navbar = ({ setOpenAuth }) => {
             <ShoppingCartOutlined sx={{ color: "inherit", fontSize: "28px" }} />
           </Navlink>
           {currentUser && (
-            <Avatar src={currentUser?.img}>{currentUser?.name[0]}</Avatar>
+            <Avatar onClick={handleAvatarClick} src={currentUser?.img}>{currentUser?.name[0]}</Avatar>
           )}
         </MobileIcons>
         <NavItems>
