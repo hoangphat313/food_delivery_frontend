@@ -120,6 +120,7 @@ const Desc = styled.div`
 `;
 const Price = styled.div`
   display: flex;
+  flex-direction:column;
   align-items: center;
   gap: 8px;
   font-size: 18px;
@@ -261,7 +262,9 @@ const ProductsCard = ({ product }) => {
         <Title>{product?.name}</Title>
         <Desc>{product?.desc}</Desc>
         <Price>
-          {formatVND(product?.price?.org)} <Span>{formatVND(product?.price?.mrp)}</Span>
+          <>{formatVND(product?.price?.org)} <Span>{formatVND(product?.price?.mrp)}</Span>
+
+          </>
           <Percent> ({discount.toFixed(2)}% Off) </Percent>
         </Price>
       </Details>
