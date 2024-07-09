@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LogoImg from "../../utils/Images/logo_auth.png";
-import { FavoriteBorder, MenuRounded, SearchRounded, ShoppingCartOutlined } from "@mui/icons-material";
-import Button from "../Button/Button";
-import { Avatar } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import { Avatar } from "@mui/material";
+import { FavoriteBorder, MenuRounded, SearchRounded, ShoppingCartOutlined } from "@mui/icons-material";
+import LogoImg from "../../utils/Images/logo_auth.png";
 import { logout } from "../../redux/reducers/UserSlice";
+import Button from "../Button/Button";
 import {
   Nav, NavContainer, NavItems, NavLogo,
   Navlink, MobileIcon, Logo, RestaurantName,
   TextButton, MobileIcons, MobileMenu, ButtonContainer,
-} from "./style"
-
+} from "./style";
 
 const Navbar = ({ setOpenAuth }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +38,7 @@ const Navbar = ({ setOpenAuth }) => {
           <Logo src={LogoImg} />
           <RestaurantName>Napoli's Pizza House</RestaurantName>
         </NavLogo>
+        {/* Các biểu tượng trên menu di động */}
         <MobileIcons>
           <SearchRounded sx={{ color: "inherit", fontSize: "30px" }} onClick={handleSearchClick} />
           <Navlink to="/favorite">
@@ -47,14 +47,15 @@ const Navbar = ({ setOpenAuth }) => {
           <Navlink to="/cart">
             <ShoppingCartOutlined sx={{ color: "inherit", fontSize: "28px" }} />
           </Navlink>
-
         </MobileIcons>
+        {/* Các mục trên thanh điều hướng */}
         <NavItems>
           <Navlink to="/">Home</Navlink>
           <Navlink to="/dishes">Dishes</Navlink>
           <Navlink to="/orders">My Orders</Navlink>
           <Navlink to="/contact">About Us</Navlink>
         </NavItems>
+        {/* Menu di động */}
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             <Navlink to="/" onClick={() => setIsOpen(false)}>Home</Navlink>
@@ -65,18 +66,16 @@ const Navbar = ({ setOpenAuth }) => {
               <Navlink to="/profile" onClick={() => setIsOpen(false)}>Profile</Navlink>
             )}
             {currentUser ? (
-              <>
-                <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
-              </>
+              <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
             ) : (
               <div style={{ display: "flex", gap: "12px" }}>
                 <Button text="Sign Up" outlined small onClick={() => setOpenAuth(true)} />
                 <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
               </div>
             )}
-
           </MobileMenu>
         )}
+        {/* Container chứa các nút và biểu tượng trên thanh điều hướng */}
         <ButtonContainer>
           <SearchRounded sx={{ color: "inherit", fontSize: "30px" }} onClick={handleSearchClick} />
           {currentUser ? (
@@ -91,9 +90,7 @@ const Navbar = ({ setOpenAuth }) => {
               <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
             </>
           ) : (
-            <>
-              <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
-            </>
+            <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
           )}
         </ButtonContainer>
       </NavContainer>
