@@ -62,6 +62,11 @@ const Navbar = ({ setOpenAuth }) => {
             <Navlink to="/orders" onClick={() => setIsOpen(false)}>Orders</Navlink>
             <Navlink to="/contact" onClick={() => setIsOpen(false)}>Contact</Navlink>
             {currentUser ? (
+              <Navlink to="/profile" onClick={() => setIsOpen(false)}>{currentUser?.name}</Navlink>
+            ) : (
+              <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
+            )}
+            {currentUser ? (
               <>
                 <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
               </>
@@ -71,11 +76,7 @@ const Navbar = ({ setOpenAuth }) => {
                 <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
               </div>
             )}
-            {currentUser ? (
-              <Navlink to="/profile" onClick={() => setIsOpen(false)}>{currentUser?.name}</Navlink>
-            ) : (
-              <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
-            )}
+
           </MobileMenu>
         )}
         <ButtonContainer>
