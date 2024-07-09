@@ -6,7 +6,7 @@ import ProductCard from "../../components/cards/ProductsCard";
 import animationData from "../../utils/Lotties/no_order.json";
 import Lottie from "lottie-react";
 import { CardWrapper } from '../HomePage/style';
-
+import { ToastContainer } from 'react-toastify';
 const SearchPageContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
@@ -65,10 +65,6 @@ const SearchPage = () => {
 
     const handleSearch = async () => {
         const token = localStorage.getItem("food-app-token");
-        if (!token) {
-            toast.error("You must be logged in to search for products.");
-            return;
-        }
         if (!query) {
             toast.error("Please enter a product name to search.");
             return;
@@ -86,6 +82,7 @@ const SearchPage = () => {
 
     return (
         <SearchPageContainer>
+            <ToastContainer />
             <SearchBar>
                 <SearchInput
                     type="text"
