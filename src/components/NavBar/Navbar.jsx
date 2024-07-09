@@ -72,7 +72,7 @@ const Navbar = ({ setOpenAuth }) => {
               </div>
             )}
             {currentUser ? (
-              <Navlink to="/profile" onClick={() => setIsOpen(false)}>Contact</Navlink>
+              <Navlink to="/profile" onClick={() => setIsOpen(false)}>{currentUser?.name}</Navlink>
             ) : (
               <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
             )}
