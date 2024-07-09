@@ -47,9 +47,7 @@ const Navbar = ({ setOpenAuth }) => {
           <Navlink to="/cart">
             <ShoppingCartOutlined sx={{ color: "inherit", fontSize: "28px" }} />
           </Navlink>
-          {currentUser && (
-            <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
-          )}
+
         </MobileIcons>
         <NavItems>
           <Navlink to="/">Home</Navlink>
@@ -72,6 +70,9 @@ const Navbar = ({ setOpenAuth }) => {
                 <Button text="Sign Up" outlined small onClick={() => setOpenAuth(true)} />
                 <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
               </div>
+            )}
+            {currentUser && (
+              <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
             )}
           </MobileMenu>
         )}
