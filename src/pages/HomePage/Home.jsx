@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { category } from "../../utils/data";
-import HeaderImage from "../../utils/Images/background.jpg";
+import ImageSlider from "../../components/Slider/sliderComponent";
 import ProductCategoryCard from "../../components/cards/ProductCategoryCard";
 import ProductsCard from "../../components/cards/ProductsCard";
 import { getAllProducts } from "../../api";
@@ -42,8 +42,7 @@ const Home = () => {
 
   return (
     <Container>
-      <Img src={HeaderImage} />
-
+      <ImageSlider />
       <Section>
         <Title>Food Categories</Title>
         <CardWrapper>

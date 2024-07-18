@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const Container = styled.div`
   flex: 1;
   height: 100%;
@@ -21,8 +20,8 @@ export const Logo = styled.img`
   top: 20px;
   left: 20px;
   z-index: 10;
-  width: 100px; /* Đặt kích thước mới cho LogoImage */
-  height: auto; /* Đảm bảo tỷ lệ khung hình tự động */
+  width: 100px; 
+  height: auto; 
 `;
 
 export const Image = styled.img`
@@ -42,10 +41,6 @@ export const Right = styled.div`
   gap: 16px;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
 `;
 
 export const CloseButton = styled.div`
