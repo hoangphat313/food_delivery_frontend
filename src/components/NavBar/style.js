@@ -55,6 +55,8 @@ export const NavItems = styled.ul`
 `;
 
 export const Navlink = styled(NavLink)`
+  font-family: 'Roboto';
+  font-weight: 600;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.text_primary};

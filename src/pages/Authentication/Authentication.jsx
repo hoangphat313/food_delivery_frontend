@@ -27,16 +27,16 @@ const Authentication = ({ openAuth, setOpenAuth }) => {
               <SignIn setOpenAuth={setOpenAuth} />
               <Text>
                 {" "}
-                Don't have an account ?{" "}
-                <TextButton onClick={() => setLogin(false)}>Sign Up</TextButton>
+                Không Có Tài Khoản ?{" "}
+                <TextButton onClick={() => setLogin(false)}>Đăng Ký</TextButton>
               </Text>
             </>
           ) : (
             <>
               <SignUp setOpenAuth={setOpenAuth} />
               <Text>
-                Already have an account ?{" "}
-                <TextButton onClick={() => setLogin(true)}>Sign In</TextButton>
+                Đã Có Tài Khoản ?{" "}
+                <TextButton onClick={() => setLogin(true)}>Đăng Nhập</TextButton>
               </Text>
             </>
           )}

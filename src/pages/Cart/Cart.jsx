@@ -30,16 +30,14 @@ const Cart = () => {
     phoneNumber: "",
     completeAddress: "",
   });
-  const [isFormFilled, setIsFormFilled] = useState(false); // State để kiểm tra xem form đã điền đầy đủ hay chưa
+  const [isFormFilled, setIsFormFilled] = useState(false);
 
-  // Function to check if all delivery details are filled
   const checkFormFilled = () => {
     const { firstName, lastName, emailAddress, phoneNumber, completeAddress } = deliveryDetails;
     return firstName && lastName && emailAddress && phoneNumber && completeAddress;
   };
 
   useEffect(() => {
-    setIsFormFilled(checkFormFilled()); // Cập nhật trạng thái isFormFilled khi có thay đổi trong deliveryDetails
   }, [deliveryDetails]);
 
   // Function to fetch user data
@@ -181,11 +179,11 @@ const Cart = () => {
                 <Left>
                   <Table>
                     <TableItem bold flex>
-                      Product
+                      Sản Phẩm
                     </TableItem>
-                    <TableItem bold>Price</TableItem>
-                    <TableItem bold>Quantity</TableItem>
-                    <TableItem bold>Subtotal</TableItem>
+                    <TableItem bold>Giá</TableItem>
+                    <TableItem bold>Số Lượng</TableItem>
+                    <TableItem bold>Tổng Tiền</TableItem>
                     <TableItem></TableItem>
                   </Table>
                   {products.map((item) => (
@@ -246,10 +244,10 @@ const Cart = () => {
                 </Left>
                 <Right>
                   <Subtotal>
-                    Subtotal: {formatVND(calculateSubtotal())}
+                    Tổng Hóa Đơn: {formatVND(calculateSubtotal())}
                   </Subtotal>
                   <Delivery>
-                    Delivery Details:
+                    Chi Tiết Địa Chỉ
                     <div>
                       <div
                         style={{
@@ -269,7 +267,7 @@ const Cart = () => {
                           }
                         />
                         {deliveryDetails.firstName === "" && (
-                          <WarningMessage>Please enter First Name</WarningMessage>
+                          <WarningMessage>Vui lòng nhập Tên</WarningMessage>
                         )}
                         <TextInput
                           small
@@ -283,7 +281,7 @@ const Cart = () => {
                           }
                         />
                         {deliveryDetails.lastName === "" && (
-                          <WarningMessage>Please enter Last Name</WarningMessage>
+                          <WarningMessage>Vui lòng nhập Họ</WarningMessage>
                         )}
                       </div>
                       <TextInput
@@ -298,7 +296,7 @@ const Cart = () => {
                         }
                       />
                       {deliveryDetails.emailAddress === "" && (
-                        <WarningMessage>Please enter Email Address</WarningMessage>
+                        <WarningMessage>Vui lòng nhập địa chỉ Email</WarningMessage>
                       )}
                       <TextInput
                         small
@@ -312,7 +310,7 @@ const Cart = () => {
                         }
                       />
                       {deliveryDetails.phoneNumber === "" && (
-                        <WarningMessage>Please enter Phone Number</WarningMessage>
+                        <WarningMessage>Vui lòng nhập số điện thoại</WarningMessage>
                       )}
                       <TextInput
                         small
@@ -328,12 +326,12 @@ const Cart = () => {
                         }
                       />
                       {deliveryDetails.completeAddress === "" && (
-                        <WarningMessage>Please enter Complete Address</WarningMessage>
+                        <WarningMessage>Vui lòng nhập địa chỉ đầy đủ</WarningMessage>
                       )}
                     </div>
                   </Delivery>
                   <Button
-                    text={"Place Order"}
+                    text={"Đặt Hàng"}
                     disabled={!isFormFilled}
                     loading={buttonLoad}
                     onClick={PlaceOrder}

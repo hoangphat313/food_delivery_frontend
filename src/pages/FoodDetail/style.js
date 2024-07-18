@@ -91,6 +91,7 @@ export const Ingridents = styled.div`
   gap: 24px;
 `;
 export const Items = styled.div`
+  padding-top:10px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;

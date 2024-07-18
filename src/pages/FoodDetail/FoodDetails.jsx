@@ -147,7 +147,7 @@ const FoodDetails = () => {
             </Price>
             <Desc>{product?.desc}</Desc>
             <Ingridents>
-              Ingridents
+              Nguyên Liệu
               <Items>
                 {product?.ingredients.map((ingredient) => (
                   <Item>{ingredient}</Item>
@@ -155,7 +155,7 @@ const FoodDetails = () => {
               </Items>
             </Ingridents>
             <ButtonWrapper>
-              <Button text="Order Now" full
+              <Button text="Mua Hàng" full
                 isLoading={cartLoading}
                 onClick={() => orderNow(product?._id)}
               />

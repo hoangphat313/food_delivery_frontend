@@ -38,23 +38,23 @@ const SignUp = ({ setOpenAuth }) => {
     setPasswordError("");
 
     if (!name) {
-      setNameError("Please enter your name");
+      setNameError("Xin hãy nhập tên của bạn");
       isValid = false;
     }
 
     if (!email) {
-      setEmailError("Please enter your email");
+      setEmailError("Vui lòng nhập email");
       isValid = false;
     } else if (!validateEmail(email)) {
-      setEmailError("Please enter a valid email address");
+      setEmailError("Vui lòng nhập địa chỉ email hợp lệ");
       isValid = false;
     }
 
     if (!password) {
-      setPasswordError("Please enter your password");
+      setPasswordError("Vui lòng nhập mật khẩu của bạn");
       isValid = false;
     } else if (!validatePassword(password)) {
-      setPasswordError("Password must contain at least one uppercase, one lowercase, one digit, and minimum 6 characters");
+      setPasswordError("Mật khẩu phải chứa ít nhất một chữ hoa, một chữ thường, một chữ số và tối thiểu 6 ký tự");
       isValid = false;
     }
 
@@ -111,34 +111,34 @@ const SignUp = ({ setOpenAuth }) => {
   return (
     <Container>
       <div>
-        <Title>Create New Account 👋</Title>
-        <Span>Please enter details to create a new account</Span>
+        <Title>Tạo Tài Khoản Mới 👋</Title>
+        <Span>Vui lòng nhập thông tin chi tiết để tạo tài khoản mới</Span>
       </div>
       <div style={{ display: "flex", gap: "20px", flexDirection: "column" }}>
         <TextInput
-          label="Full Name"
-          placeholder="Enter your full name"
+          label="Tên Đầy Đủ"
+          placeholder="Nhập tên đầy đủ của bạn..."
           value={name}
           handleChange={(e) => setName(e.target.value)}
         />
         {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
         <TextInput
-          label="Email Address"
-          placeholder="Enter your email address"
+          label="Địa Chỉ Email"
+          placeholder="Nhập địa chỉ email của bạn..."
           value={email}
           handleChange={(e) => setEmail(e.target.value)}
         />
         {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
         <TextInput
-          label="Password"
-          placeholder="Enter your password"
+          label="Mật Khẩu"
+          placeholder="Nhập mật khẩu của bạn..."
           password
           value={password}
           handleChange={(e) => setPassword(e.target.value)}
         />
         {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
         <Button
-          text="Sign Up"
+          text="Đăng Ký"
           onClick={handleSignUp}
           isLoading={loading}
           isDisabled={buttonDisabled}

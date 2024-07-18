@@ -92,10 +92,10 @@ const SearchPage = () => {
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Enter product name"
+                    placeholder="Nhập tên của sản phẩm..."
                 />
                 <SearchButton onClick={handleSearch} disabled={loading}>
-                    {loading ? "Searching..." : "Search"}
+                    {loading ? "Đang Tìm Kiếm..." : "Tìm Kiếm"}
                 </SearchButton>
             </SearchBar>
             <SearchResults>

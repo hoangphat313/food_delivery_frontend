@@ -89,19 +89,19 @@ const OrderCard = ({ order }) => {
   return (
     <OrderCardContainer>
       <OrderInfo>
-        <OrderTitle>Order ID: {order._id}</OrderTitle>
+        <OrderTitle>Mã Đơn: {order._id}</OrderTitle>
         <OrderStatus>{order.status}</OrderStatus>
       </OrderInfo>
-      <OrderAddress>Address: {order.address}</OrderAddress>
-      <OrderTotal>Total Amount: {formatVND(order.total_amount)}</OrderTotal>
-      <h4>Products:</h4>
+      <OrderAddress>Địa Chỉ: {order.address}</OrderAddress>
+      <OrderTotal>Tổng Tiền: {formatVND(order.total_amount)}</OrderTotal>
+      <h4>Sản Phẩm:</h4>
       <ProductsList>
         {order.products.map((item) => (
           <ProductItem key={item.product._id}>
             <ProductImage src={item.product.img} alt={item.product.name} />
             <ProductDetails>
               <ProductName>{item.product.name}</ProductName>
-              <ProductQuantity>Quantity: {item.quantity}</ProductQuantity>
+              <ProductQuantity>Số Lượng: {item.quantity}</ProductQuantity>
             </ProductDetails>
           </ProductItem>
         ))}

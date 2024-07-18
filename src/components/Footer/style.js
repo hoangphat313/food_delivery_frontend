@@ -10,6 +10,7 @@ export const FooterContainer = styled.footer`
   position: relative;
   bottom: 0;
   left: 0;
+  margin-top:10px;
 `;
 
 export const FooterTop = styled.div`

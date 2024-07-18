@@ -21,7 +21,7 @@ const ProfileEditForm = ({ currentUser, onUpdateSuccess }) => {
             const token = localStorage.getItem('food-app-token');
             const updatedUser = await updateProfile(token, formData);
             onUpdateSuccess(updatedUser);
-            dispatch(updateUser(updatedUser)); // Cập nhật người dùng trong Redux store
+            dispatch(updateUser(updatedUser));
         } catch (error) {
             console.error('Error updating profile:', error);
         }
@@ -30,7 +30,7 @@ const ProfileEditForm = ({ currentUser, onUpdateSuccess }) => {
     return (
         <Form onSubmit={handleSubmit}>
             <FormGroup>
-                <Label htmlFor="name">Name:</Label>
+                <Label htmlFor="name">Tên:</Label>
                 <Input
                     type="text"
                     id="name"
@@ -61,7 +61,7 @@ const ProfileEditForm = ({ currentUser, onUpdateSuccess }) => {
                     onChange={handleChange}
                 />
             </FormGroup>
-            <Button type="submit">Update Profile</Button>
+            <Button type="submit">Cập nhật hồ sơ</Button>
         </Form>
     );
 };

@@ -83,14 +83,14 @@ const SignIn = ({ setOpenAuth }) => {
   return (
     <Container>
       <div>
-        <Title>Welcome to Napoli's Pizza House 👋</Title>
-        <Span>Please login with your details here</Span>
+        <Title>Chào Mừng Đến Với Napoli's Pizza House 👋</Title>
+        <Span>Vui lòng đăng nhập với thông tin của bạn tại đây</Span>
       </div>
       <div style={{ display: "flex", gap: "20px", flexDirection: "column" }}>
         <FieldContainer>
           <TextInput
-            label="Email Address"
-            placeholder="Enter your email address"
+            label="Địa Chỉ Email"
+            placeholder="Nhập địa chỉ email của bạn..."
             value={email}
             handleChange={(e) => setEmail(e.target.value)}
           />
@@ -98,17 +98,17 @@ const SignIn = ({ setOpenAuth }) => {
         </FieldContainer>
         <FieldContainer>
           <TextInput
-            label="Password"
-            placeholder="Enter your password"
+            label="Mật Khẩu"
+            placeholder="Nhập mật khẩu của bạn..."
             password
             value={password}
             handleChange={(e) => setPassword(e.target.value)}
           />
           {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
         </FieldContainer>
-        <TextButton>Forgot Password?</TextButton>
+        <TextButton>Quên Mật Khẩu?</TextButton>
         <Button
-          text="Sign In"
+          text="Đăng Nhập"
           onClick={handelSignIn}
           isLoading={loading}
           isDisabled={buttonDisabled}

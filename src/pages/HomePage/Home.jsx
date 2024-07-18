@@ -45,7 +45,7 @@ const Home = () => {
       <Img src={HeaderImage} />
 
       <Section>
-        <Title>Food Categories</Title>
+        <Title>Danh Mục Sản Phẩm</Title>
         <CardWrapper>
           {category.map((categoryItem) => (
             <div key={categoryItem.id} onClick={handleCardClick}>
@@ -56,7 +56,7 @@ const Home = () => {
       </Section>
 
       <Section>
-        <Title>Most Popular</Title>
+        <Title>Sản Phẩm Phổ Biến</Title>
         {loading ? (
           <CircularProgress />
         ) : (
@@ -69,7 +69,7 @@ const Home = () => {
             {visibleCount < products.length && (
               <ButtonWrapper>
                 <ViewMoreButton onClick={handleViewMore} disabled={isLoadingMore}>
-                  {isLoadingMore ? <CircularProgress size={24} /> : 'View More'}
+                  {isLoadingMore ? <CircularProgress size={24} /> : 'Xem Thêm'}
                 </ViewMoreButton>
               </ButtonWrapper>
             )}

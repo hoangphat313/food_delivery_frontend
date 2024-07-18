@@ -1,82 +1,128 @@
-import { Button, TextField } from "@mui/material";
 import styled from "styled-components";
+import { TextField, Button } from "@mui/material";
+
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
-  background: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.text_primary};
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f9f9f9;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px;
+  }
+`;
+
+export const MapContainer = styled.div`
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+  @media (max-width: 768px) {
+    order: 2;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+export const ContentContainer = styled.div`
+  flex: 2;
+  min-width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    order: 1;
+    padding: 15px;
+  }
+  
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: ${({ theme }) => theme.primary};
+  color: #333;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
 `;
 
 export const Description = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  color: #666;
   text-align: center;
-  max-width: 600px;
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Section = styled.div`
-  max-width: 800px;
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 20px;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.primary};
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 export const SectionDescription = styled.p`
-  font-size: 1.2rem;
-  color: ${({ theme }) => theme.text_primary};
+  margin-bottom: 20px;
+  color: #666;
 `;
 
 export const ContactInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
 `;
 
 export const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin-bottom: 10px;
+`;
+
+export const InfoText = styled.span`
+  margin-left: 10px;
+  color: #555;
 `;
 
 export const Icon = styled.div`
-  margin-right: 10px;
-  color: ${({ theme }) => theme.primary};
-`;
-
-export const InfoText = styled.div`
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #0073e6;
 `;
 
 export const FormContainer = styled.div`
-  width: 100%;
-  max-width: 600px;
+  margin-top: 20px;
 `;
 
 export const StyledTextField = styled(TextField)`
-  && {
-    margin-bottom: 20px;
+  margin-bottom: 20px !important;
+  .MuiOutlinedInput-root {
+    border-radius: 8px;
   }
 `;
 
 export const StyledButton = styled(Button)`
-  && {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: ${({ theme }) => theme.primary};
-    color: white;
+  margin-top: 20px;
+  background-color: #0073e6 !important;
+  color: white !important;
+  &:hover {
+    background-color: #005bb5 !important;
   }
 `;

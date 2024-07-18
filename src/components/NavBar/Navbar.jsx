@@ -50,27 +50,27 @@ const Navbar = ({ setOpenAuth }) => {
         </MobileIcons>
         {/* Các mục trên thanh điều hướng */}
         <NavItems>
-          <Navlink to="/">Home</Navlink>
-          <Navlink to="/dishes">Dishes</Navlink>
-          <Navlink to="/orders">My Orders</Navlink>
-          <Navlink to="/contact">About Us</Navlink>
+          <Navlink to="/">Trang Chủ</Navlink>
+          <Navlink to="/dishes">Món Ăn</Navlink>
+          <Navlink to="/orders">Đơn Hàng</Navlink>
+          <Navlink to="/contact">Giới thiệu</Navlink>
         </NavItems>
         {/* Menu di động */}
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
-            <Navlink to="/" onClick={() => setIsOpen(false)}>Home</Navlink>
-            <Navlink to="/dishes" onClick={() => setIsOpen(false)}>Dishes</Navlink>
-            <Navlink to="/orders" onClick={() => setIsOpen(false)}>Orders</Navlink>
-            <Navlink to="/contact" onClick={() => setIsOpen(false)}>Contact</Navlink>
+            <Navlink to="/" onClick={() => setIsOpen(false)}>Trang Chủ</Navlink>
+            <Navlink to="/dishes" onClick={() => setIsOpen(false)}>Món Ăn</Navlink>
+            <Navlink to="/orders" onClick={() => setIsOpen(false)}>Đơn Hàng</Navlink>
+            <Navlink to="/contact" onClick={() => setIsOpen(false)}>Giới thiệu</Navlink>
             {currentUser && (
-              <Navlink to="/profile" onClick={() => setIsOpen(false)}>Profile</Navlink>
+              <Navlink to="/profile" onClick={() => setIsOpen(false)}>Cá Nhân</Navlink>
             )}
             {currentUser ? (
-              <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
+              <TextButton onClick={() => dispatch(logout())}>Đăng Xuất</TextButton>
             ) : (
               <div style={{ display: "flex", gap: "12px" }}>
-                <Button text="Sign Up" outlined small onClick={() => setOpenAuth(true)} />
-                <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
+                <Button text="Đăng Ký" outlined small onClick={() => setOpenAuth(true)} />
+                <Button text="Đăng Nhập" small onClick={() => setOpenAuth(true)} />
               </div>
             )}
           </MobileMenu>
@@ -87,10 +87,10 @@ const Navbar = ({ setOpenAuth }) => {
                 <ShoppingCartOutlined sx={{ color: "inherit", fontSize: "28px" }} />
               </Navlink>
               <Avatar style={{ cursor: "pointer" }} onClick={handleAvatarClick} src={currentUser?.img}></Avatar>
-              <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
+              <TextButton onClick={() => dispatch(logout())}>Đăng Xuất</TextButton>
             </>
           ) : (
-            <Button text="Sign In" small onClick={() => setOpenAuth(true)} />
+            <Button text="Đăng Nhập" small onClick={() => setOpenAuth(true)} />
           )}
         </ButtonContainer>
       </NavContainer>
